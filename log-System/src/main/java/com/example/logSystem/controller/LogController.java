@@ -2,6 +2,7 @@ package com.example.logSystem.controller;
 
 import com.example.logSystem.entity.Log;
 import com.example.logSystem.service.LogService;
+import com.example.logSystem.utils.Action;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,7 @@ public class LogController {
     }
 
     @GetMapping("/action/{id}")
-    public Optional<Log> findByAction(@PathVariable Enum id) {
+    public Optional<Log> findByAction(@PathVariable Action id) {
         return logService.findByAction(id);
     }
 

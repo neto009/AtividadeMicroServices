@@ -14,12 +14,8 @@ public class LogMessage {
     @Value("${logSystem.rabbitmq.routingkey}")
     String routingKey;
 
-
-    public final RabbitTemplate rabbitTemplate;
-
-    public LogMessage(RabbitTemplate rabbitTemplate) {
-        this.rabbitTemplate = rabbitTemplate;
-    }
+    @Autowired
+    public RabbitTemplate rabbitTemplate;
 
     public void sendMessage(Log log) {
         rabbitTemplate.convertAndSend(exchange, routingKey, log);

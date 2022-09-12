@@ -28,5 +28,4 @@ public class Log {
     private Double price;
     private String user;
     private String cpf;
-
 }
